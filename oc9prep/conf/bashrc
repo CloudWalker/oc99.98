@@ -1,0 +1,19 @@
+# add by bobe
+alias ping='ping -c 2 '
+alias bye='sudo shutdown -h now'
+alias netstat='netstat -an | head -n 20'
+alias syslog='tail -n 20 /var/log/syslog'
+
+# 重設網卡 MAC 位址
+ifconfig -a | grep eth0 &>/dev/null
+if [ "$?" != "0" ]; then
+   read -p "因更換網卡, 需要重設 MAC, 請按任何鍵重新開機 : " ans
+   sudo rm /etc/udev/rules.d/70-persistent-net.rules &>/dev/null
+   sudo reboot
+fi
+
+#  如是本機登入, 使用 en_US 語系, 如是 ssh 連接還是使用 LANG=zh_TW.UTF-8 這設定
+if [ -z $SSH_TTY ]; then    
+   export LANG='en_US.UTF-8'
+   export LANGUAGE='en_US'
+fi

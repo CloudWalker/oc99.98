@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+</HEAD>
+<BODY>
+<!-- 這網頁要能執行, 必須自行安裝 Apache Server 及設定 CGI 目錄, 然後撰寫 cgipost.sh 程式 -->
+
+<FORM action="http://140.137.222.75/~19/cgi-bin/cgipost.sh" method="post">
+名字：<INPUT name="myname" size=10 maxlength=20 value="蕭鴉喧"><P>
+密碼：<INPUT name="passwd" type=password size=8 maxlength=8><P>
+性別：<INPUT name="sex" type=radio value="男">男
+<INPUT name="sex" type=radio value="女" checked>女<P>
+嗜好（可複選）：
+<INPUT name="f1" type=checkbox value="book">閱讀
+<INPUT name="f2" type=checkbox value="sport" checked>運動
+<INPUT name="f3" type=checkbox value="music" checked>音樂
+<INPUT name="f4" type=checkbox value="sleep">睡覺
+<INPUT name="f4" type=checkbox value="talk">聊天<P>
+<INPUT type="submit" value="送出表單資料">
+<INPUT type="reset" value="重新輸入">
+</FORM>
+</BODY>
+</HTML>
